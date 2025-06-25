@@ -69,7 +69,6 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
         <img src="/icons/Linkedin.png" alt="LinkedIn" />
       </button>
     </div>
-
             <button 
               className="theme-toggle"
               onClick={toggleDarkMode}
