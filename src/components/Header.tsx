@@ -70,7 +70,6 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
       </button>
     </div>
 
-            
             <button 
               className="theme-toggle"
               onClick={toggleDarkMode}
