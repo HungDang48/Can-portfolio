@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Gallery.css';
 
 interface Artwork {
@@ -12,91 +13,92 @@ interface Artwork {
 }
 
 const Gallery: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
 
   const artworks: Artwork[] = [
     {
       id: 1,
-      title: "Chân Dung Phụ Nữ",
-      description: "Bức chân dung thể hiện vẻ đẹp và sự duyên dáng của người phụ nữ Việt Nam",
-      image: "👩",
-      category: "portrait",
-      year: "2024",
-      medium: "Digital Painting"
+      title: t('gallery.portrait'),
+      description: t('gallery.portrait_desc', 'Bức chân dung thể hiện vẻ đẹp và sự duyên dáng của người phụ nữ Việt Nam'),
+      image: '👩',
+      category: 'portrait',
+      year: '2024',
+      medium: 'Digital Painting'
     },
     {
       id: 2,
-      title: "Phong Cảnh Núi Rừng",
-      description: "Khám phá vẻ đẹp hoang dã của thiên nhiên qua góc nhìn nghệ thuật",
-      image: "🏔️",
-      category: "landscape",
-      year: "2023",
-      medium: "Oil on Canvas"
+      title: t('gallery.landscape'),
+      description: t('gallery.landscape_desc', 'Khám phá vẻ đẹp hoang dã của thiên nhiên qua góc nhìn nghệ thuật'),
+      image: '🏔️',
+      category: 'landscape',
+      year: '2023',
+      medium: 'Oil on Canvas'
     },
     {
       id: 3,
-      title: "Nhân Vật Fantasy",
-      description: "Nhân vật trong thế giới tưởng tượng với chi tiết phức tạp",
-      image: "🧙‍♂️",
-      category: "character",
-      year: "2024",
-      medium: "Digital Art"
+      title: t('gallery.character'),
+      description: t('gallery.character_desc', 'Nhân vật trong thế giới tưởng tượng với chi tiết phức tạp'),
+      image: '🧙‍♂️',
+      category: 'character',
+      year: '2024',
+      medium: 'Digital Art'
     },
     {
       id: 4,
-      title: "Thành Phố Tương Lai",
-      description: "Concept art về thành phố trong tương lai với kiến trúc độc đáo",
-      image: "🏙️",
-      category: "concept",
-      year: "2023",
-      medium: "Digital Painting"
+      title: t('gallery.concept'),
+      description: t('gallery.concept_desc', 'Concept art về thành phố trong tương lai với kiến trúc độc đáo'),
+      image: '🏙️',
+      category: 'concept',
+      year: '2023',
+      medium: 'Digital Painting'
     },
     {
       id: 5,
-      title: "Hoa Sen Mùa Hạ",
-      description: "Tranh hoa sen với màu sắc tươi mới và bố cục hài hòa",
-      image: "🌸",
-      category: "still-life",
-      year: "2024",
-      medium: "Watercolor"
+      title: t('gallery.still_life'),
+      description: t('gallery.still_life_desc', 'Tranh hoa sen với màu sắc tươi mới và bố cục hài hòa'),
+      image: '🌸',
+      category: 'still-life',
+      year: '2024',
+      medium: 'Watercolor'
     },
     {
       id: 6,
-      title: "Chiến Binh Cổ Đại",
-      description: "Nhân vật chiến binh với trang phục và vũ khí cổ đại",
-      image: "⚔️",
-      category: "character",
-      year: "2023",
-      medium: "Digital Painting"
+      title: t('gallery.character'),
+      description: t('gallery.character_desc2', 'Nhân vật chiến binh với trang phục và vũ khí cổ đại'),
+      image: '⚔️',
+      category: 'character',
+      year: '2023',
+      medium: 'Digital Painting'
     },
     {
       id: 7,
-      title: "Biển Hoàng Hôn",
-      description: "Cảnh biển lúc hoàng hôn với ánh sáng vàng cam ấm áp",
-      image: "🌅",
-      category: "landscape",
-      year: "2024",
-      medium: "Acrylic"
+      title: t('gallery.landscape'),
+      description: t('gallery.landscape_desc2', 'Cảnh biển lúc hoàng hôn với ánh sáng vàng cam ấm áp'),
+      image: '🌅',
+      category: 'landscape',
+      year: '2024',
+      medium: 'Acrylic'
     },
     {
       id: 8,
-      title: "Thiết Kế Logo",
-      description: "Concept thiết kế logo cho thương hiệu với phong cách hiện đại",
-      image: "🎨",
-      category: "concept",
-      year: "2024",
-      medium: "Digital Design"
+      title: t('gallery.concept'),
+      description: t('gallery.concept_desc2', 'Concept thiết kế logo cho thương hiệu với phong cách hiện đại'),
+      image: '🎨',
+      category: 'concept',
+      year: '2024',
+      medium: 'Digital Design'
     }
   ];
 
   const filters = [
-    { id: 'all', label: 'Tất cả' },
-    { id: 'portrait', label: 'Chân Dung' },
-    { id: 'landscape', label: 'Phong Cảnh' },
-    { id: 'character', label: 'Nhân Vật' },
-    { id: 'concept', label: 'Concept Art' },
-    { id: 'still-life', label: 'Tĩnh Vật' }
+    { id: 'all', label: t('gallery.all') },
+    { id: 'portrait', label: t('gallery.portrait') },
+    { id: 'landscape', label: t('gallery.landscape') },
+    { id: 'character', label: t('gallery.character') },
+    { id: 'concept', label: t('gallery.concept') },
+    { id: 'still-life', label: t('gallery.still_life') }
   ];
 
   const filteredArtworks = activeFilter === 'all' 
@@ -115,9 +117,9 @@ const Gallery: React.FC = () => {
     <div className="gallery-page page-transition">
       <section className="gallery-hero">
         <div className="container">
-          <h1 className="gallery-title">Bộ Sưu Tập Tác Phẩm</h1>
+          <h1 className="gallery-title">{t('gallery.title')}</h1>
           <p className="gallery-subtitle">
-            Khám phá những tác phẩm nghệ thuật độc đáo được tạo ra từ đam mê và sự sáng tạo
+            {t('gallery.subtitle')}
           </p>
         </div>
       </section>
@@ -160,7 +162,7 @@ const Gallery: React.FC = () => {
 
           {filteredArtworks.length === 0 && (
             <div className="no-artworks">
-              <p>Không có tác phẩm nào trong danh mục này.</p>
+              <p>{t('gallery.no_artworks')}</p>
             </div>
           )}
         </div>
@@ -185,13 +187,13 @@ const Gallery: React.FC = () => {
                 
                 <div className="modal-meta">
                   <div className="meta-item">
-                    <strong>Năm:</strong> {selectedArtwork.year}
+                    <strong>{t('gallery.year')}:</strong> {selectedArtwork.year}
                   </div>
                   <div className="meta-item">
-                    <strong>Chất liệu:</strong> {selectedArtwork.medium}
+                    <strong>{t('gallery.medium')}:</strong> {selectedArtwork.medium}
                   </div>
                   <div className="meta-item">
-                    <strong>Thể loại:</strong> {filters.find(f => f.id === selectedArtwork.category)?.label}
+                    <strong>{t('gallery.category')}:</strong> {filters.find(f => f.id === selectedArtwork.category)?.label}
                   </div>
                 </div>
               </div>

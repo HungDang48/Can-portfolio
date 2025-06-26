@@ -55,6 +55,7 @@
 
 .nav-list {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 2rem;
   margin: 0;
@@ -70,10 +71,14 @@
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 5px;
   text-decoration: none;
   position: relative;
+  min-width: 90px;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
 }
 
 .nav-link:hover {
@@ -166,6 +171,48 @@
   transition: all 0.3s ease;
 }
 
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-right: 1rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: #b8860b;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-btn.active, .lang-btn:hover {
+  background: #d4a574;
+  color: #fff;
+}
+
+.lang-divider {
+  color: #b8860b;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 2px;
+}
+
+@media (max-width: 900px) {
+  .nav-list {
+    gap: 1rem;
+  }
+  .nav-link {
+    min-width: 70px;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
 @media (max-width: 768px) {
   .header-content {
     grid-template-columns: auto 1fr auto;
@@ -198,14 +245,16 @@
 
   .nav-list {
     flex-direction: column;
-    padding: 2rem;
+    align-items: flex-start;
     gap: 1rem;
   }
 
   .nav-link {
     width: 100%;
+    min-width: unset;
     text-align: left;
     padding: 1rem;
+    font-size: 1rem;
   }
 
   .menu-toggle {
@@ -213,18 +262,28 @@
   }
 
   .social-icons {
-    display: none;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
   }
 
-  .nav-open .menu-toggle span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+  .header-controls .social-icons {
+    margin-left: 0;
+    margin-right: 0;
   }
+}
 
-  .nav-open .menu-toggle span:nth-child(2) {
-    opacity: 0;
+@media (max-width: 500px) {
+  .social-icons {
+    gap: 0.2rem;
   }
-
-  .nav-open .menu-toggle span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+  .social-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .social-icon img {
+    width: 24px;
+    height: 24px;
   }
 }

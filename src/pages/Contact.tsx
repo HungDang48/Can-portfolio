@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Contact.css';
 
 interface ContactForm {
@@ -9,6 +10,7 @@ interface ContactForm {
 }
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<ContactForm>({
     name: '',
     email: '',
@@ -55,9 +57,9 @@ const Contact: React.FC = () => {
     <div className="contact-page page-transition">
       <section className="contact-hero">
         <div className="container">
-          <h1 className="contact-title">Liên Hệ</h1>
+          <h1 className="contact-title">{t('contact.title')}</h1>
           <p className="contact-subtitle">
-            Hãy kết nối với tôi để thảo luận về dự án nghệ thuật hoặc đơn giản là chia sẻ đam mê
+            {t('contact.subtitle')}
           </p>
         </div>
       </section>
@@ -66,49 +68,47 @@ const Contact: React.FC = () => {
         <div className="container">
           <div className="contact-grid">
             <div className="contact-info">
-              <h2>Hãy liên hệ với tôi!</h2>
+              <h2>{t('contact.title')}</h2>
               <p>
-                Tôi luôn sẵn sàng lắng nghe những ý tưởng mới và cơ hội hợp tác thú vị. 
-                Dù bạn muốn đặt hàng một tác phẩm nghệ thuật, thảo luận về dự án, 
-                hay chỉ đơn giản là muốn kết nối, tôi rất mong được nghe từ bạn.
+                {t('contact.info_text', 'Tôi luôn sẵn sàng lắng nghe những ý tưởng mới và cơ hội hợp tác thú vị. Dù bạn muốn đặt hàng một tác phẩm nghệ thuật, thảo luận về dự án, hay chỉ đơn giản là muốn kết nối, tôi rất mong được nghe từ bạn.')}
               </p>
               
               <div className="contact-details">
                 <div className="contact-item">
                   <span className="contact-icon">📍</span>
                   <div>
-                    <h4>Địa chỉ</h4>
-                    <p>Hà Nội, Việt Nam</p>
+                    <h4>{t('contact.info.address')}</h4>
+                    <p>{t('contact.info.address_value')}</p>
                   </div>
                 </div>
                 
                 <div className="contact-item">
                   <span className="contact-icon">📧</span>
                   <div>
-                    <h4>Email</h4>
-                    <p>levancan.artist@gmail.com</p>
+                    <h4>{t('contact.info.email')}</h4>
+                    <p>{t('contact.info.email_value')}</p>
                   </div>
                 </div>
                 
                 <div className="contact-item">
                   <span className="contact-icon">📱</span>
                   <div>
-                    <h4>Điện thoại</h4>
-                    <p>+84 123 456 789</p>
+                    <h4>{t('contact.info.phone')}</h4>
+                    <p>{t('contact.info.phone_value')}</p>
                   </div>
                 </div>
 
                 <div className="contact-item">
                   <span className="contact-icon">⏰</span>
                   <div>
-                    <h4>Giờ làm việc</h4>
-                    <p>Thứ 2 - Thứ 6: 9:00 - 18:00</p>
+                    <h4>{t('contact.info.work_time')}</h4>
+                    <p>{t('contact.info.work_time_value')}</p>
                   </div>
                 </div>
               </div>
 
               <div className="social-links">
-                <h4>Theo dõi tôi</h4>
+                <h4>{t('contact.follow')}</h4>
                 <div className="social-icons">
                   {socialLinks.map(social => (
                     <a
@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
             <div className="contact-form-container">
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name">Họ và tên *</label>
+                  <label htmlFor="name">{t('contact.form.name')}</label>
                   <input
                     type="text"
                     id="name"
@@ -137,12 +137,12 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    placeholder="Nhập họ và tên của bạn"
+                    placeholder={t('contact.form.placeholder_name')}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email">Email *</label>
+                  <label htmlFor="email">{t('contact.form.email')}</label>
                   <input
                     type="email"
                     id="email"
@@ -150,24 +150,24 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    placeholder="Nhập email của bạn"
+                    placeholder={t('contact.form.placeholder_email')}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subject">Tiêu đề</label>
+                  <label htmlFor="subject">{t('contact.form.subject')}</label>
                   <input
                     type="text"
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    placeholder="Nhập tiêu đề tin nhắn"
+                    placeholder={t('contact.form.placeholder_subject')}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Tin nhắn *</label>
+                  <label htmlFor="message">{t('contact.form.message')}</label>
                   <textarea
                     id="message"
                     name="message"
@@ -175,7 +175,7 @@ const Contact: React.FC = () => {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    placeholder="Nhập nội dung tin nhắn của bạn"
+                    placeholder={t('contact.form.placeholder_message')}
                   ></textarea>
                 </div>
 
@@ -184,18 +184,18 @@ const Contact: React.FC = () => {
                   className="btn btn-primary submit-btn"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Đang gửi...' : 'Gửi tin nhắn'}
+                  {isSubmitting ? t('contact.form.sending') : t('contact.form.send')}
                 </button>
 
                 {submitStatus === 'success' && (
                   <div className="success-message">
-                    ✅ Tin nhắn đã được gửi thành công! Tôi sẽ phản hồi sớm nhất có thể.
+                    {t('contact.form.success')}
                   </div>
                 )}
 
                 {submitStatus === 'error' && (
                   <div className="error-message">
-                    ❌ Có lỗi xảy ra. Vui lòng thử lại sau.
+                    {t('contact.form.error')}
                   </div>
                 )}
               </form>

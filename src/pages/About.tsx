@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './About.css';
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
   const skills = [
     { name: 'Digital Painting', level: 95 },
     { name: 'Character Design', level: 90 },
@@ -53,15 +55,10 @@ const About: React.FC = () => {
         <div className="container">
           <div className="about-content">
             <div className="about-text">
-              <h1 className="about-title">Xin chào!</h1>
-              <p className="about-intro">
-              Tôi là Lê Văn Can – một Graphic Designer kiêm Illustrator, đam mê sáng tạo và kể chuyện thông qua hình ảnh.
-              Với tình yêu đặc biệt dành cho điện ảnh, đặc biệt là phong cách độc đáo của Nobuhiko Obayashi, tôi luôn nỗ lực mang những khung hình đầy cảm xúc và tính nghệ thuật vào từng tác phẩm của mình.
-              </p>
+              <h1 className="about-title">{t('about.title')}</h1>
+              <p className="about-intro">{t('about.intro')}</p>
               <p>
-                Tôi tin rằng nghệ thuật không chỉ là việc tạo ra những hình ảnh đẹp, mà còn là 
-                cách để truyền tải cảm xúc và câu chuyện. Mỗi tác phẩm tôi tạo ra đều mang trong 
-                mình một phần tâm hồn và trải nghiệm của tôi.
+                {t('about.intro2')}
               </p>
             </div>
             
@@ -79,22 +76,22 @@ const About: React.FC = () => {
 
       <section className="artist-philosophy">
       <div className="container">
-  <h2 className="section-title">Triết Lý Nghệ Thuật</h2>
+  <h2 className="section-title">{t('about.philosophy')}</h2>
   <div className="philosophy-grid">
     <div className="philosophy-item">
       <div className="philosophy-icon">🎨</div>
-      <h3>Sáng Tạo Không Giới Hạn</h3>
-      <p>Với 4 năm học tập và làm việc tại Nhật Bản cùng nền tảng tiếng Nhật N2, tôi thấu hiểu thẩm mỹ và xu hướng thiết kế tại thị trường này. Tôi luôn tìm cách kết hợp tư duy sáng tạo và cảm hứng nghệ thuật để tạo ra những tác phẩm khác biệt.</p>
+      <h3>{t('about.philosophy')}</h3>
+      <p>{t('about.philosophy_1')}</p>
     </div>
     <div className="philosophy-item">
       <div className="philosophy-icon">💫</div>
-      <h3>Cảm Xúc Chân Thật</h3>
-      <p>Tôi tin rằng mỗi tác phẩm phải mang được chiều sâu cảm xúc và câu chuyện riêng. Đó là cách tôi kết nối với người xem – bằng sự chân thành và nghệ thuật kể chuyện bằng hình ảnh.</p>
+      <h3>{t('about.philosophy')}</h3>
+      <p>{t('about.philosophy_2')}</p>
     </div>
     <div className="philosophy-item">
       <div className="philosophy-icon">🌟</div>
-      <h3>Chất Lượng Tuyệt Đối</h3>
-      <p>Với tinh thần "luôn cố gắng đến cùng để đạt kết quả tốt nhất", tôi cam kết mang đến sản phẩm hoàn thiện chỉn chu ở mọi khía cạnh – từ concept, bố cục đến từng chi tiết thiết kế.</p>
+      <h3>{t('about.philosophy')}</h3>
+      <p>{t('about.philosophy_3')}</p>
     </div>
   </div>
 </div>
@@ -103,7 +100,7 @@ const About: React.FC = () => {
 
       <section className="skills-section">
         <div className="container">
-          <h2 className="section-title">Kỹ Năng Nghệ Thuật</h2>
+          <h2 className="section-title">{t('about.skills')}</h2>
           <div className="skills-grid">
             {skills.map((skill, index) => (
               <div key={skill.name} className="skill-item">
@@ -125,7 +122,7 @@ const About: React.FC = () => {
 
       <section className="experience-section">
         <div className="container">
-          <h2 className="section-title">Hành Trình Nghệ Thuật</h2>
+          <h2 className="section-title">{t('about.experience')}</h2>
           <div className="timeline">
             {experiences.map((exp, index) => (
               <div key={index} className="timeline-item">

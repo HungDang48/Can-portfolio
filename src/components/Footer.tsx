@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -12,22 +14,22 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h3>Lê Văn Can</h3>
             <p>
-              Họa sĩ 2D chuyên nghiệp, tạo ra những tác phẩm nghệ thuật độc đáo và đầy cảm xúc.
+              {t('footer.artist_desc', 'Họa sĩ 2D chuyên nghiệp, tạo ra những tác phẩm nghệ thuật độc đáo và đầy cảm xúc.')}
             </p>
           </div>
           
           <div className="footer-section">
-            <h4>Liên kết nhanh</h4>
+            <h4>{t('footer.quick_links')}</h4>
             <ul className="footer-links">
-              <li><Link to="/">Trang chủ</Link></li>
-              <li><Link to="/about">Về tôi</Link></li>
-              <li><Link to="/gallery">Tác phẩm</Link></li>
-              <li><Link to="/contact">Liên hệ</Link></li>
+              <li><Link to="/">{t('header.home')}</Link></li>
+              <li><Link to="/about">{t('header.about')}</Link></li>
+              <li><Link to="/gallery">{t('header.gallery')}</Link></li>
+              <li><Link to="/contact">{t('header.contact')}</Link></li>
             </ul>
           </div>
           
           <div className="footer-section">
-            <h4>Kết nối</h4>
+            <h4>{t('footer.connect')}</h4>
             <div className="footer-social">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
                 📘
@@ -46,7 +48,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Lê Văn Can - Artist Portfolio. Được tạo với ❤️ bằng React & TypeScript.</p>
+          <p>&copy; {currentYear} {t('footer.copyright')}</p>
         </div>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Header.css';
 
 interface HeaderProps {
@@ -10,6 +11,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,6 +23,11 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
 
   const isActive = (path: string) => {
     return location.pathname === path;
+  };
+
+  const handleChangeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem('lang', lang);
   };
 
   return (
@@ -36,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                   className={`nav-link ${isActive('/') ? 'active' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Home
+                  {t('header.home')}
                 </Link>
               </li>
               <li>
@@ -45,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                   className={`nav-link ${isActive('/about') ? 'active' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  About
+                  {t('header.about')}
                 </Link>
               </li>
               <li>
@@ -54,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                   className={`nav-link ${isActive('/gallery') ? 'active' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Gallery
+                  {t('header.gallery')}
                 </Link>
               </li>
               <li>
@@ -63,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                   className={`nav-link ${isActive('/contact') ? 'active' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Contact
+                  {t('header.contact')}
                 </Link>
               </li>
             </ul>
@@ -72,12 +79,29 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
           {/* Center - Logo */}
           <div className="logo">
             <Link to="/">
-              <h2>Lê Văn Can</h2>
+              <h2>{i18n.language === 'vi' ? 'Lê Văn Can' : 'Le Van Can'}</h2>
             </Link>
           </div>
           
           {/* Right side - Controls and Social */}
           <div className="header-controls">
+            <div className="lang-switcher">
+              <button
+                className={`lang-btn${i18n.language === 'vi' ? ' active' : ''}`}
+                onClick={() => handleChangeLanguage('vi')}
+                aria-label="Chuyển sang tiếng Việt"
+              >
+                VI
+              </button>
+              <span className="lang-divider">|</span>
+              <button
+                className={`lang-btn${i18n.language === 'en' ? ' active' : ''}`}
+                onClick={() => handleChangeLanguage('en')}
+                aria-label="Switch to English"
+              >
+                EN
+              </button>
+            </div>
             <div className="social-icons">
               <button 
                 className="social-icon"
