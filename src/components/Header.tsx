@@ -110,24 +110,31 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                 <div className="social-icons">
                   <button 
                     className="social-icon"
-                    onClick={() => openSocialLink("https://facebook.com")}
+                    onClick={() => openSocialLink("https://www.facebook.com/levyanycan")}
                     aria-label="Facebook"
                   >
-                    <img src="/icons/Facebook.png" alt="Facebook" />
+                    <img src="/icons/fb2.png" alt="Facebook" />
                   </button>
                   <button 
                     className="social-icon"
-                    onClick={() => openSocialLink("https://instagram.com")}
+                    onClick={() => openSocialLink("https://www.instagram.com/ver2.go/")}
                     aria-label="Instagram"
                   >
-                    <img src="/icons/Instagram.png" alt="Instagram" />
+                    <img src="/icons/ig2.png" alt="Instagram" />
                   </button>
-                  <button 
+                  {/* <button 
                     className="social-icon"
                     onClick={() => openSocialLink("https://linkedin.com")}
                     aria-label="LinkedIn"
                   >
-                    <img src="/icons/Linkedin.png" alt="LinkedIn" />
+                    <img src="/icons/linkedin2.png" alt="LinkedIn" />
+                  </button> */}
+                  <button 
+                    className="social-icon"
+                    onClick={() => openSocialLink("https://www.behance.net/levancan")}
+                    aria-label="Benhance"
+                  >
+                    <img src="/icons/behance2.png" alt="LinkedIn" />
                   </button>
                 </div>
                 {/* <button 
