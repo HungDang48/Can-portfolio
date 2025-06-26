@@ -15,20 +15,36 @@ const About: React.FC = () => {
 
   const experiences = [
     {
-      year: '2023 - Hiện tại',
-      title: 'Họa sĩ tự do',
-      description: 'Tạo ra các tác phẩm nghệ thuật cho khách hàng cá nhân và doanh nghiệp'
+      year: '6/2024-4/2025',
+      title: 'FPTSoftwareInnovation',
+      description: '2D Animation, Graphic Design, Motion Graphic, Comtor tiếng Nhật'
     },
     {
-      year: '2021 - 2023',
-      title: 'Họa sĩ tại Studio ABC',
-      description: 'Tham gia các dự án game và animation với vai trò concept artist'
+      year: '5/2023-4/2024',
+      title: 'WemoMedia',
+      description: 'Vẽ Storyboard'
     },
     {
-      year: '2019 - 2021',
-      title: 'Sinh viên Mỹ thuật',
-      description: 'Học tập tại Đại học Mỹ thuật với chuyên ngành Hội họa'
+      year: '10/2022-12/2022',
+      title: 'VuogleClass',
+      description: 'Khóa học Vẽ minh họa'
+    },
+    {
+      year: '1/2021-3/2021',
+      title: 'T.ARTWorkshop',
+      description: 'Khóa học Digital Painting Basic'
+    },
+    {
+      year: '2020-2021',
+      title: 'TokyoDesignerGakuin',
+      description: 'Illustration course'
+    },
+    {
+      year: '2018-2020',
+      title: 'TokyoIkueiJapaneseSchool',
+      description: 'Illustration course'
     }
+    
   ];
 
   return (
@@ -37,11 +53,10 @@ const About: React.FC = () => {
         <div className="container">
           <div className="about-content">
             <div className="about-text">
-              <h1 className="about-title">Về Tôi</h1>
+              <h1 className="about-title">Xin chào!</h1>
               <p className="about-intro">
-                Tôi là Lê Văn Can, một họa sĩ 2D đam mê với việc tạo ra những tác phẩm nghệ thuật 
-                độc đáo và đầy cảm xúc. Với hơn 5 năm kinh nghiệm trong lĩnh vực nghệ thuật, 
-                tôi đã phát triển phong cách riêng biệt kết hợp giữa kỹ thuật truyền thống và hiện đại.
+              Tôi là Lê Văn Can – một Graphic Designer kiêm Illustrator, đam mê sáng tạo và kể chuyện thông qua hình ảnh.
+              Với tình yêu đặc biệt dành cho điện ảnh, đặc biệt là phong cách độc đáo của Nobuhiko Obayashi, tôi luôn nỗ lực mang những khung hình đầy cảm xúc và tính nghệ thuật vào từng tác phẩm của mình.
               </p>
               <p>
                 Tôi tin rằng nghệ thuật không chỉ là việc tạo ra những hình ảnh đẹp, mà còn là 
@@ -51,35 +66,39 @@ const About: React.FC = () => {
             </div>
             
             <div className="about-image">
-              <div className="artist-portrait">
-                <div className="portrait-placeholder">👨‍🎨</div>
-              </div>
-            </div>
+  <div className="artist-portrait">
+    <div className="portrait-placeholder">
+      <img src="/img/CanAva.png" alt="Lê Văn Can - Artist Portrait" className="portrait-img" />
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       </section>
 
       <section className="artist-philosophy">
-        <div className="container">
-          <h2 className="section-title">Triết Lý Nghệ Thuật</h2>
-          <div className="philosophy-grid">
-            <div className="philosophy-item">
-              <div className="philosophy-icon">🎨</div>
-              <h3>Sáng Tạo Không Giới Hạn</h3>
-              <p>Tôi tin vào việc phá vỡ các quy tắc truyền thống để tạo ra những tác phẩm độc đáo và đột phá.</p>
-            </div>
-            <div className="philosophy-item">
-              <div className="philosophy-icon">💫</div>
-              <h3>Cảm Xúc Chân Thật</h3>
-              <p>Mỗi nét vẽ đều mang trong mình cảm xúc chân thật, tạo ra sự kết nối sâu sắc với người xem.</p>
-            </div>
-            <div className="philosophy-item">
-              <div className="philosophy-icon">🌟</div>
-              <h3>Chất Lượng Tuyệt Đối</h3>
-              <p>Tôi cam kết mang đến những tác phẩm chất lượng cao nhất, từ concept đến hoàn thiện.</p>
-            </div>
-          </div>
-        </div>
+      <div className="container">
+  <h2 className="section-title">Triết Lý Nghệ Thuật</h2>
+  <div className="philosophy-grid">
+    <div className="philosophy-item">
+      <div className="philosophy-icon">🎨</div>
+      <h3>Sáng Tạo Không Giới Hạn</h3>
+      <p>Với 4 năm học tập và làm việc tại Nhật Bản cùng nền tảng tiếng Nhật N2, tôi thấu hiểu thẩm mỹ và xu hướng thiết kế tại thị trường này. Tôi luôn tìm cách kết hợp tư duy sáng tạo và cảm hứng nghệ thuật để tạo ra những tác phẩm khác biệt.</p>
+    </div>
+    <div className="philosophy-item">
+      <div className="philosophy-icon">💫</div>
+      <h3>Cảm Xúc Chân Thật</h3>
+      <p>Tôi tin rằng mỗi tác phẩm phải mang được chiều sâu cảm xúc và câu chuyện riêng. Đó là cách tôi kết nối với người xem – bằng sự chân thành và nghệ thuật kể chuyện bằng hình ảnh.</p>
+    </div>
+    <div className="philosophy-item">
+      <div className="philosophy-icon">🌟</div>
+      <h3>Chất Lượng Tuyệt Đối</h3>
+      <p>Với tinh thần "luôn cố gắng đến cùng để đạt kết quả tốt nhất", tôi cam kết mang đến sản phẩm hoàn thiện chỉn chu ở mọi khía cạnh – từ concept, bố cục đến từng chi tiết thiết kế.</p>
+    </div>
+  </div>
+</div>
+
       </section>
 
       <section className="skills-section">
